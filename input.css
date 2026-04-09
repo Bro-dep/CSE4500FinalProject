@@ -1,0 +1,13 @@
+@import "tailwindcss";
+@theme {
+    --breakpoint-xs: 30rem;
+    --breakpoint-sm: 48rem;
+    --breakpoint-md: 62rem;
+    --breakpoint-lg: 80rem;
+    --breakpoint-xl: 96rem;
+    
+}
+
+@media (min-width: var(--breakpoint-xs)) {
+    /* Styles for extra small screens and above */
+}
