@@ -14,9 +14,9 @@
       <nav>
         <!--Only show on larger screens-->
         <!--nav-->
-        <div class="invisible md:visible ">
+        <div class="invisible md:visible">
           <!--Only show on larger screens-->
-          <ul class="flex space-x-4">
+          <ul class="flex space-x-4 pl-4 pt-4">
             <li>
               <a href="/home.html" class="text-gray-500 hover:text-black"
                 >Home</a
@@ -34,7 +34,7 @@
             </li>
           </ul>
         </div>
-        <div class="visible md:invisible">
+        <div class="visible md:invisible pr-4 pt-4 flex justify-center">
           <!--Phone Nav-->
           <!--hamburger menu-->
           <button
@@ -57,9 +57,9 @@
           </button>
         </div>
       </nav>
-      <div class="text-2xl font-bold text-center">
+      <div class="text-2xl font-bold text-center pt-4">
         <a href="/home.html">
-          <p class="visible md:hidden">
+          <p class="block md:hidden">
             Austin<br />
             Photography
           </p>
@@ -69,7 +69,7 @@
       <nav class="invisible md:visible">
         <!--Only show on larger screens-->
         <!--Socials-->
-        <ul class="flex space-x-4 float-right">
+        <ul class="flex space-x-4 float-right pr-4 pt-4">
           <li>
             <a
               href="https://www.instagram.com"
@@ -107,6 +107,28 @@
         </ul>
       </nav>
     </div>
+    <div
+      id="mobile-menu"
+      class="hidden w-screen justify-items-center visible md:hidden text-center opacity-100 starting:opacity-0 scale-100 starting:scale-0 transition duration-500 ease-in-out"
+    >
+      <ul
+        class="flex flex-col w-1/2 bg-gray-100 rounded-lg p-4 space-y-2 mx-auto"
+      >
+        <li>
+          <a href="/home.html" class="text-gray-500 hover:text-black">Home</a>
+        </li>
+        <li>
+          <a href="/about.html" class="text-gray-500 hover:text-black"
+            >About/Contact</a
+          >
+        </li>
+        <li>
+          <a href="/projects.html" class="text-gray-500 hover:text-black"
+            >Projects</a
+          >
+        </li>
+      </ul>
+    </div>
     <!--main content-->
     <div class="container mx-auto p-4 text-center">
       <h1 class="font-medium text-lg">Stary Night</h1>
@@ -141,4 +163,42 @@
       </div>
     </div>
   </body>
+  <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuToggle.addEventListener("click", () => {
+      if (mobileMenu.classList.contains("block")) {
+        mobileMenu.classList.remove("opacity-100");
+        mobileMenu.classList.remove("starting:opacity-0");
+        mobileMenu.classList.remove("scale-100");
+        mobileMenu.classList.remove("starting:scale-0");
+        mobileMenu.classList.add("starting:opacity-100");
+        mobileMenu.classList.add("opacity-0");
+        mobileMenu.classList.add("starting:scale-100");
+        mobileMenu.classList.add("scale-0");
+        setTimeout(transitionMobileMenu, 300);
+      } else {
+        mobileMenu.classList.remove("starting:opacity-100");
+        mobileMenu.classList.remove("opacity-0");
+        mobileMenu.classList.remove("starting:scale-100");
+        mobileMenu.classList.remove("scale-0"); 
+        mobileMenu.classList.add("opacity-100");
+        mobileMenu.classList.add("starting:opacity-0");
+        mobileMenu.classList.add("scale-100");
+        mobileMenu.classList.add("starting:scale-0");
+        transitionMobileMenu();
+      }
+    });
+
+    function transitionMobileMenu() {
+      if (mobileMenu.classList.contains("block")) {
+        mobileMenu.classList.remove("block");
+        mobileMenu.classList.add("hidden");
+      } else {
+        mobileMenu.classList.remove("hidden");
+        mobileMenu.classList.add("block");
+      }
+    }
+  </script>
 </html>
