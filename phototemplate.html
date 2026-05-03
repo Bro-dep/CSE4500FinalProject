@@ -12,27 +12,62 @@
     <!--title bar-->
     <div class="columns-3">
       <nav>
+        <!--Only show on larger screens-->
         <!--nav-->
-        <ul class="flex space-x-4">
-          <li>
-            <a href="/home.html" class="text-gray-500 hover:text-black">Home</a>
-          </li>
-          <li>
-            <a href="/about.html" class="text-gray-500 hover:text-black"
-              >About/Contact</a
+        <div class="invisible md:visible ">
+          <!--Only show on larger screens-->
+          <ul class="flex space-x-4">
+            <li>
+              <a href="/home.html" class="text-gray-500 hover:text-black"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a href="/about.html" class="text-gray-500 hover:text-black"
+                >About/Contact</a
+              >
+            </li>
+            <li>
+              <a href="/projects.html" class="text-gray-500 hover:text-black"
+                >Projects</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="visible md:invisible">
+          <!--Phone Nav-->
+          <!--hamburger menu-->
+          <button
+            id="menu-toggle"
+            class="text-gray-500 hover:text-black focus:outline-none"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="2rem"
+              height="2rem"
+              fill="currentColor"
+              class="bi bi-list"
+              viewBox="0 0 16 16"
             >
-          </li>
-          <li>
-            <a href="/projects.html" class="text-gray-500 hover:text-black"
-              >Projects</a
-            >
-          </li>
-        </ul>
+              <path
+                fill-rule="evenodd"
+                d="M2.5 12a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"
+              />
+            </svg>
+          </button>
+        </div>
       </nav>
       <div class="text-2xl font-bold text-center">
-        <a href="/home.html">Austin Photography</a>
+        <a href="/home.html">
+          <p class="visible md:hidden">
+            Austin<br />
+            Photography
+          </p>
+          <p class="hidden md:block">Austin Photography</p>
+        </a>
       </div>
-      <nav>
+      <nav class="invisible md:visible">
+        <!--Only show on larger screens-->
         <!--Socials-->
         <ul class="flex space-x-4 float-right">
           <li>
@@ -78,11 +113,7 @@
       <p class="font-light">A collection of astrophotography images</p>
     </div>
     <div
-      class="grid grid-flow-row grid-cols-3 
-      md:ms-16 md:me-16 
-      lg:ms-32 lg:me-32 
-      xl:ms-40 xl:me-40 
-      2xl:ms-48 2xl:ml-[20vw] 2xl:mr-[20vw] max-w-[1200px] justify-self-center"
+      class="grid grid-flow-row grid-cols-3 md:ms-16 md:me-16 lg:ms-32 lg:me-32 xl:ms-40 xl:me-40 2xl:ms-48 2xl:ml-[20vw] 2xl:mr-[20vw] max-w-[1200px] justify-self-center"
     >
       <!-- photo grid-->
       <div class="col-span-2">
